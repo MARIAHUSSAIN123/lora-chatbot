@@ -147,13 +147,27 @@ st.markdown("""
 /* ============================================================
    FLOATING CHAT WIDGET (portfolio-style)
    ============================================================ */
+/* Remove any transform on Streamlit's own wrappers so our fixed elements
+   are positioned relative to the real browser viewport, not a nested box */
+[data-testid="stMain"], [data-testid="stAppViewContainer"],
+[data-testid="stMainBlockContainer"], .main, .block-container {
+    transform: none !important;
+    filter: none !important;
+    perspective: none !important;
+}
+
 .st-key-fab_container {
     position: fixed !important;
-    bottom: 26px; right: 26px;
-    z-index: 9999;
+    bottom: 26px !important;
+    right: 26px !important;
+    top: auto !important;
+    left: auto !important;
+    width: 60px !important;
+    margin: 0 !important;
+    z-index: 999999 !important;
 }
 .st-key-fab_container button {
-    width: 60px; height: 60px;
+    width: 60px !important; height: 60px !important;
     border-radius: 50% !important;
     font-size: 24px !important;
     background: linear-gradient(135deg, #7b2ff7, #00c9ff) !important;
@@ -163,9 +177,13 @@ st.markdown("""
 
 .st-key-chat_panel {
     position: fixed !important;
-    bottom: 100px; right: 26px;
-    width: 360px;
-    z-index: 9998;
+    bottom: 100px !important;
+    right: 26px !important;
+    top: auto !important;
+    left: auto !important;
+    width: 360px !important;
+    margin: 0 !important;
+    z-index: 999998 !important;
     background: linear-gradient(160deg, #1a0b3d, #120826);
     border: 1px solid rgba(176, 38, 255, 0.45);
     border-radius: 18px;
