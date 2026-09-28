@@ -383,6 +383,8 @@ if st.session_state.chat_open:
         chunks, chunk_pages, model, index = load_everything()
         client = load_client()
 
+        st.caption(f"🔧 Debug: {len(chunks)} chunks loaded, vector dim {index.d}")
+
         with st.container(height=300, key="msg_scroll"):
             if not st.session_state.messages:
                 st.markdown(
