@@ -235,12 +235,24 @@ st.markdown("""
     border-top-left-radius: 3px;
 }
 
-.st-key-chat_panel input[type="text"] {
-    background: rgba(255,255,255,0.07) !important;
-    color: #fff !important;
+.st-key-chat_panel input[type="text"],
+.st-key-chat_panel [data-testid="stTextInput"] input,
+.st-key-chat_panel [data-baseweb="input"] input {
+    background: rgba(255,255,255,0.08) !important;
+    color: #ffffff !important;
+    caret-color: #ffffff !important;
+    -webkit-text-fill-color: #ffffff !important;
     border-radius: 10px !important;
     border: 1px solid rgba(176, 38, 255, 0.4) !important;
     font-size: 13.5px !important;
+}
+.st-key-chat_panel input[type="text"]::placeholder {
+    color: #b6a8e0 !important;
+    opacity: 1 !important;
+    -webkit-text-fill-color: #b6a8e0 !important;
+}
+.st-key-chat_panel [data-baseweb="input"] {
+    background: transparent !important;
 }
 .st-key-chat_panel [data-testid="stFormSubmitButton"] button {
     background: linear-gradient(90deg, #7b2ff7, #00c9ff) !important;
